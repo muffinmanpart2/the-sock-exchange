@@ -21,6 +21,12 @@ jobs:
           cd react
           npm install
 
+      - name: Configure .env file
+        run: |
+          cd react
+          echo "VITE_SOCKS_API_URL = https://ecs.the-sock-exchange.com/api/socks" > .env
+          echo "VITE_ENVIRONMENT = production" >> .env
+
       - name: Build Vite React app
         run: |
           cd react
